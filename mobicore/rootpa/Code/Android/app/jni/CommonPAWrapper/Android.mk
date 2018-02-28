@@ -47,6 +47,10 @@ ifeq ($(DEBUG), 1)
     LOCAL_CFLAGS += -D__DEBUG=1
 endif
 
+LOCAL_MULTILIB := both
+
+LOCAL_ADDITIONAL_DEPENDENCIES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
+
 LOCAL_SRC_FILES += commonwrapper.cpp
 LOCAL_SRC_FILES += JniHelpers.cpp
 LOCAL_SRC_FILES += CmpResponses.cpp

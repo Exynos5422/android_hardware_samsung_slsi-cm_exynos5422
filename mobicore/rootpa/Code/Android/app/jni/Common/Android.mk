@@ -70,12 +70,16 @@ LOCAL_C_INCLUDES +=  external/icu/icu4c/source/common
 LOCAL_C_INCLUDES +=  $(LOCAL_PATH)/../../../../Common
 LOCAL_C_INCLUDES +=  $(LOCAL_PATH)/../../../../Common/include
 
+LOCAL_MULTILIB := both
+
 ifeq ($(ROOTPA_MODULE_TEST), 1)
     LOCAL_STATIC_LIBRARIES +=  McStub
     LOCAL_MODULE    := provisioningagent_test
 else
     LOCAL_MODULE    := provisioningagent
 endif
+
+LOCAL_ADDITIONAL_DEPENDENCIES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
 LOCAL_MODULE_TAGS := eng optional
 
